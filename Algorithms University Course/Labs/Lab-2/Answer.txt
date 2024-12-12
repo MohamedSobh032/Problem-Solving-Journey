@@ -1,0 +1,17 @@
+Mohamed Ahmed Ibrahim Sobh
+1210288
+
+Alpha: Merge Sort
+Reason: Same number of movements for all types of lists
+
+Gamma: Heap Sort
+Reason: By Elimination
+
+Epsilon: Insertion Sort
+Reason: fastest at inorder datasets
+
+Zeta: Quick Sort
+Reason: Slow values at Inorder lists
+
+Theta: Selection Sort
+Reason: Same number of comparsions for all types of lists

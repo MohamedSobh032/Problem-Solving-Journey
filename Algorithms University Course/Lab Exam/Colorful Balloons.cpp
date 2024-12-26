@@ -15,14 +15,8 @@ int main() {
         blns[i] = std::make_pair(score, next);
     }
     
-    std::vector<long long> dp(n, 0);
-    dp[n-1] = blns[n - 1].first;
-    for (int i = n - 2; i >= 0; i--) {
-        if (i + blns[i].second + 1 <= n - 1)
-            dp[i] = std::max(dp[i + 1], blns[i].first + dp[i + blns[i].second + 1]);
-        else
-            dp[i] = std::max(dp[i + 1], blns[i].first);
-    }
-    
+    std::vector<long long> dp(n, 0); dp[n - 1] = blns[n - 1].first;
+    for (int i = n - 2; i >= 0; i--)
+        dp[i] = std::max(dp[i + 1], blns[i].first + (i + blns[i].second + 1 <= n - 1) ? dp[i + blns[i].second + 1] : 0);
     std::cout << dp[0];
 }

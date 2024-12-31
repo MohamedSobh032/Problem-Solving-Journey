@@ -1,7 +1,5 @@
-from typing import List
-
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         for i in range(len(nums)):
             for j in range(len(nums)):
                 if nums[i] + nums[j] == target and i != j:
@@ -9,7 +7,7 @@ class Solution:
         return []
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         l = 0
         r = len(nums) - 1
         while l < r:
@@ -23,7 +21,7 @@ class Solution:
         return []
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         nmap = {}
         for i in range(len(nums)):
             sol = target - nums[i]

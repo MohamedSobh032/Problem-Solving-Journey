@@ -1,7 +1,5 @@
-from typing import List
-
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums: list[int]) -> bool:
         
         for i in range(len(nums)):
             for j in range(len(nums)):
@@ -10,7 +8,7 @@ class Solution:
         return False
 
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums: list[int]) -> bool:
 
         nums.sort()
         for i in range(len(nums) - 1):
@@ -19,7 +17,7 @@ class Solution:
         return False
     
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums: list[int]) -> bool:
         
         nmap = {}
         for num in nums:

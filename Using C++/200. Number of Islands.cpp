@@ -10,9 +10,7 @@ public:
     std::vector<std::pair<int, int>> dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
     void dfs(int x, int y, const std::vector<std::vector<char>>& grid, std::vector<std::vector<bool>>& isVisited) {
 
-        if (!((0 <= x && x < grid.size()) && (0 <= y && y < grid[0].size()))) return;
-        if (grid[x][y] == '0') return;
-        if (isVisited[x][y]) return;
+        if (!((0 <= x && x < grid.size()) && (0 <= y && y < grid[0].size())) || grid[x][y] == '0' || isVisited[x][y]) return;
         isVisited[x][y] = true;
         for (const auto& dir: dirs) dfs(x + dir.first, y + dir.second, grid, isVisited);
     }
@@ -23,8 +21,7 @@ public:
         std::vector<std::vector<bool>> isVisited(grid.size(), std::vector<bool>(grid[0].size(), false));
         for (int i = 0; i < grid.size(); i++) {
             for (int j = 0; j < grid[0].size(); j++) {
-                if (isVisited[i][j]) continue;
-                if (grid[i][j] == '0') { isVisited[i][j] = true; continue; }
+                if (isVisited[i][j] || grid[i][j] == '0') continue;
                 counter++;
                 dfs(i, j, grid, isVisited);
                 isVisited[i][j] = true;

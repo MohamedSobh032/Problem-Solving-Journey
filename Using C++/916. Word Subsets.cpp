@@ -78,24 +78,22 @@ class Solution {
 public:
     vector<string> wordSubsets(vector<string>& words1, vector<string>& words2) {
         
-        int maxCharFreq[26] = {0}; int tempCharFreq[26];
+        int universal[26] = {0}; int dummy[26];
         for (const auto& word: words2) {
-            memset(tempCharFreq, 0, sizeof tempCharFreq);
-            for (const char& ch: word) tempCharFreq[ch - 'a']++;
-            for (int i = 0; i < 26; i++) maxCharFreq[i] = max(maxCharFreq[i], tempCharFreq[i]);
+            memset(dummy, 0, sizeof dummy);
+            for (const char& ch: word) dummy[ch - 'a']++;
+            for (int i = 0; i < 26; i++) universal[i] = max(universal[i], dummy[i]);
         }
         
-        std::vector<std::string> universalWords;
+        std::vector<std::string> universals;
         for (const auto& word: words1) {
-            memset(tempCharFreq, 0, sizeof tempCharFreq);
-            for (char ch: word) tempCharFreq[ch - 'a']++;
-            bool isUniversal = true;
-            for (int i = 0; i < 26; i++) {
-                if (maxCharFreq[i] > tempCharFreq[i]) { isUniversal = false; break; }
-            }
-            if (isUniversal) universalWords.emplace_back(word);
+            memset(dummy, 0, sizeof dummy);
+            for (char ch: word) dummy[ch - 'a']++;
+            int i = 0;
+            for (; i < 26; i++) if (universal[i] > dummy[i]) break;
+            if (i == 26) universals.emplace_back(word);
         }
         
-        return universalWords;
+        return universals;
     }
 };

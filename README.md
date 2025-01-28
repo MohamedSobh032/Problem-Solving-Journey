@@ -1,11 +1,9 @@
-# My LeetCode Problem Solving Journey
+# Problem Solving Journey
 
 ## Overview
-
-This repository contains my solutions, explanations, and insights for various problems I’ve encountered.
+This repository contains my solutions for the problems I've encountered.
 
 ## Languages Used
-
 - **C++**: To train on STL
 - **Python**: To train on the builtin functions of python
 

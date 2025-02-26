@@ -1,14 +1,15 @@
 /**
  * @brief First Solution
- * -- O(n^2)
- * -- Search for every element one by one
+ * -- Time Complexity: O(n^2)
+ * -- Space Complexity: O(1)
+ * -- Brute-force approach, search for every element one by one
  * -- Worst solution
  */
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int n = nums.size();
-        int searchingFor = n;
+        
+        int n = nums.size(), searchingFor = n;
         bool found = false;
 
         for (int i = 0; i < n; i++) {
@@ -19,10 +20,7 @@ public:
                     break;
                 }
             }
-            if (found)
-                found = false;
-            else
-                return searchingFor;
+            if (!found) return searchingFor;
         }
         return searchingFor;
     }
@@ -30,46 +28,44 @@ public:
 
 /**
  * @brief Second Solution
- * -- O(nlogn)
- * -- Sort first, then condition
+ * -- Time Complexity: O(nlogn)
+ * -- Space Complexity: O(1)
+ * -- Sorting solution
  */
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
+
         std::sort(nums.begin(), nums.end());
         int n = nums.size();
 
-        if (nums[0] != 0)
-            return 0;
-        if (nums[n-1] != n)
-            return n;
+        if (nums[0] != 0) return 0;
+        if (nums[n - 1] != n) return n;
 
-        for (int i = 0; i < nums.size(); i++) {
+        for (int i = 0; i < nums.size(); i++)
             if (nums[i] != nums[i + 1] - 1)
-                return nums[i+1] - 1;
-        }
+                return nums[i + 1] - 1;
+
         return 0;
     }
 };
 
 /**
  * @brief Third Solution
- * -- O(n)
+ * -- Time Complexity: O(n)
+ * -- Space Complexity: O(n)
  * -- Set the found elements to true, then search for the only false element
  */
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int n = nums.size();
-        std::vector<bool> found(n + 1, false);
 
-        for (int i = 0; i < n; i++)
-            found[nums[i]] = true;
+        int n = nums.size(); std::vector<bool> found(n + 1, false);
+        for (int i = 0; i < n; i++) found[nums[i]] = true;
 
-        for (int i = 0; i < n + 1; i++) {
-            if (found[i] == false)
+        for (int i = 0; i < n + 1; i++)
+            if (!found[i])
                 return i;
-        }
 
         return 0;
     }
@@ -77,22 +73,15 @@ public:
 
 /**
  * @brief Fourth Solution
- * -- O(n)
+ * -- Time Complexity: O(n)
+ * -- Space Complexity: O(1)
  * -- Add all the indices, and add all the values, the difference between them is the missing number
- * -- Best solution
  */
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
         
         int n = nums.size();
-        // calculate indices sum
-        int expected = n * (n + 1) / 2;
-        // calculate actual sum
-        int actual = 0;
-        for (int i = 0; i < n; i++) 
-            actual += nums[i];
-        // return the missing
-        return expected - actual;
+        return std::accumulate(nums.begin(), nums.end(), 0); - (n * (n + 1) / 2);
     }
 };

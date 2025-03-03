@@ -3,11 +3,13 @@
  * -- m4 3aref agib complexity
  * -- Recursive brute-force
  */
-class Solution {
+class Solution
+{
 public:
-
-    void rec(vector<int>& nums, vector<int> currList, int index, int& maximum) {
-        if (index == nums.size()) {
+    void rec(vector<int> &nums, vector<int> currList, int index, int &maximum)
+    {
+        if (index == nums.size())
+        {
             int localMax = 0;
             for (int i = 0; i < currList.size(); i++)
                 localMax += currList[i];
@@ -19,12 +21,12 @@ public:
         rec(nums, currList, index + 1, maximum);
     }
 
-    int maxSubArray(vector<int>& nums) {
+    int maxSubArray(vector<int> &nums)
+    {
         int maximum = INT_MIN;
         rec(nums, {}, 0, maximum);
         return maximum;
     }
-
 };
 
 /**
@@ -32,12 +34,15 @@ public:
  * -- O(n)
  * -- Sliding Window
  */
-class Solution {
+class Solution
+{
 public:
-    int maxSubArray(vector<int>& nums) {
+    int maxSubArray(vector<int> &nums)
+    {
         int maximum = INT_MIN;
         int sum = 0;
-        for (int i = 0; i < nums.size(); i++) {
+        for (int i = 0; i < nums.size(); i++)
+        {
             sum += nums[i];
             maximum = max(maximum, sum);
             sum = max(sum, 0);

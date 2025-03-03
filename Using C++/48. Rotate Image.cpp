@@ -4,10 +4,12 @@
  * --> Space Complexity: O(1)
  * --> Transpose and then reverse vertical mirror
  */
-class Solution {
+class Solution
+{
 public:
-    void rotate(vector<vector<int>>& matrix) {
-        
+    void rotate(vector<vector<int>> &matrix)
+    {
+
         int N = matrix.size();
         // TRANSPOSE
         for (int i = 0; i < N; i++)

@@ -4,11 +4,14 @@
  * -- Space Complexity: O(1)
  * -- Brute-force approach by checking all possible pairs
  */
-class Solution {
+class Solution
+{
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        
-        for (int i = 0; i < nums.size(); i++) {
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+
+        for (int i = 0; i < nums.size(); i++)
+        {
             int toGet = target - nums[i];
             for (int j = 0; j < nums.size(); j++)
                 if (toGet == nums[j] && i != j)
@@ -18,22 +21,27 @@ public:
     }
 };
 
-
 /**
  * @brief Second Solution
  * -- Time Complexity: O(n)
  * -- Space Complexity: O(1)
  * -- Two-pointer approach, but requires sorted array
  */
-class Solution {
+class Solution
+{
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
         int l = 0, r = nums.size() - 1;
-        while (l < r) {
+        while (l < r)
+        {
             int total = nums[l] + nums[r];
-            if (total == target) return {l, r};
-            if (total < target) l++;
-            else r--;
+            if (total == target)
+                return {l, r};
+            if (total < target)
+                l++;
+            else
+                r--;
         }
         return {};
     }
@@ -45,17 +53,20 @@ public:
  * -- Space Complexity: O(n)
  * -- Using hash map to store the index of the elements
  */
-class Solution {
+class Solution
+{
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-        
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+
         std::unordered_map<int, int> nmap;
-        for (int i = 0; i < nums.size(); i++) {
+        for (int i = 0; i < nums.size(); i++)
+        {
             int toGet = target - nums[i];
-            if (nmap.find(toGet) != nmap.end()) return {nmap[toGet], i};
+            if (nmap.find(toGet) != nmap.end())
+                return {nmap[toGet], i};
             nmap.insert({nums[i], i});
         }
         return {};
     }
 };
- 

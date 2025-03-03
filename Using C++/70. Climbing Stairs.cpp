@@ -4,19 +4,24 @@
  * -- Brute force without dynamic programming
  * -- Worst solution
  */
-class Solution {
+class Solution
+{
 public:
-    void counter(int& solutions, int total, int n) {
-        if (total == n) {
+    void counter(int &solutions, int total, int n)
+    {
+        if (total == n)
+        {
             solutions++;
             return;
-        } else if (total > n)
+        }
+        else if (total > n)
             return;
         counter(solutions, total + 1, n);
         counter(solutions, total + 2, n);
     }
 
-    int climbStairs(int n) {
+    int climbStairs(int n)
+    {
         int solutions = 0;
         counter(solutions, 0, n);
         return solutions;
@@ -26,11 +31,13 @@ public:
 /**
  * @brief Second Solution
  * -- O(n)
- * -- Brute force with dynamic programming bottom up 
+ * -- Brute force with dynamic programming bottom up
  */
-class Solution {
+class Solution
+{
 public:
-    int climbStairs(int n) {
+    int climbStairs(int n)
+    {
         // Base case
         if (n == 0 || n == 1)
             return 1;

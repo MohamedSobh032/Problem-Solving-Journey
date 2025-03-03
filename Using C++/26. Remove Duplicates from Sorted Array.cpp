@@ -5,11 +5,14 @@
  * -- Two pointer method, where the first pointer is the index of the last unique element
  * -- The second pointer is the index of the current element being checked
  */
-class Solution {
+class Solution
+{
 public:
-    int removeDuplicates(vector<int> &nums) {
+    int removeDuplicates(vector<int> &nums)
+    {
 
-        if (!nums.size()) return 0;
+        if (!nums.size())
+            return 0;
         int indx = 0;
         for (int i = 1; i < nums.size(); i++)
             if (nums[indx] != nums[i])
@@ -24,9 +27,11 @@ public:
  * -- Space Complexity: O(n)
  * -- Using a set to store the unique elements, then copy the set to the vector
  */
-class Solution {
+class Solution
+{
 public:
-    int removeDuplicates(vector<int>& nums) {
+    int removeDuplicates(vector<int> &nums)
+    {
 
         set<int> s(nums.begin(), nums.end());
         nums = vector<int>(s.begin(), s.end());

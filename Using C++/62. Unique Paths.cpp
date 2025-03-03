@@ -9,7 +9,6 @@ public:
     // bottom up solution
     int uniquePaths(int m, int n)
     {
-
         std::vector<std::vector<int>> dp(m, std::vector<int>(n, 1));
 
         for (int i = 0; i < n - 1; i++)

@@ -9,7 +9,6 @@ class Solution
 public:
     void setZeroes(vector<vector<int>> &matrix)
     {
-
         int N = matrix.size();
         int M = matrix[0].size();
         std::vector<std::vector<int>> originally = matrix;
@@ -40,7 +39,6 @@ class Solution
 public:
     void setZeroes(vector<vector<int>> &matrix)
     {
-
         int N = matrix.size();
         int M = matrix[0].size();
         matrix.insert(matrix.begin(), std::vector<int>(M, 0));
@@ -89,7 +87,6 @@ class Solution
 public:
     void setZeroes(vector<vector<int>> &matrix)
     {
-
         int N = matrix.size();
         int M = matrix[0].size();
         bool row_zero = false;

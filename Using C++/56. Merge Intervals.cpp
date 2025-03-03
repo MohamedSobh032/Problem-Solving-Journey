@@ -46,7 +46,6 @@ class Solution
 public:
     vector<vector<int>> merge(vector<vector<int>> &intervals)
     {
-
         std::vector<std::vector<int>> merged;
         std::sort(intervals.begin(), intervals.end());
         merged.push_back(intervals[0]);

@@ -10,7 +10,6 @@ class Solution
 public:
     int removeDuplicates(vector<int> &nums)
     {
-
         if (!nums.size())
             return 0;
         int indx = 0;
@@ -32,7 +31,6 @@ class Solution
 public:
     int removeDuplicates(vector<int> &nums)
     {
-
         set<int> s(nums.begin(), nums.end());
         nums = vector<int>(s.begin(), s.end());
         return nums.size();

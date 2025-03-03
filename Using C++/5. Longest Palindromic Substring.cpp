@@ -8,7 +8,6 @@ class Solution
 public:
     bool isPalindrome(const std::string &str)
     {
-
         int left = 0;
         int right = str.length() - 1;
         while (left < right)
@@ -21,7 +20,6 @@ public:
 
     string longestPalindrome(string s)
     {
-
         std::string ret(1, s[0]);
         for (size_t i = 0; i < s.size(); i++)
         {
@@ -46,7 +44,6 @@ class Solution
 public:
     string longestPalindrome(string s)
     {
-
         std::string ret;
         for (size_t i = 0; i < s.size(); i++)
         {

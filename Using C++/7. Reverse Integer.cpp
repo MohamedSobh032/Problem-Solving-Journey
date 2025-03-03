@@ -8,7 +8,6 @@ class Solution
 public:
     int reverse(int x)
     {
-
         int clone = x;
         std::vector<int> nums;
         do
@@ -42,7 +41,6 @@ class Solution
 public:
     int reverse(int x)
     {
-
         int rev = 0;
         while (x != 0)
         {

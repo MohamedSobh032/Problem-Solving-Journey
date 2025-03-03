@@ -8,7 +8,6 @@ class Solution
 public:
     vector<vector<int>> threeSum(vector<int> &nums)
     {
-
         vector<vector<int>> ret;
         set<vector<int>> uniqueTriplets;
         for (int i = 0; i < nums.size(); i++)
@@ -42,7 +41,6 @@ class Solution
 public:
     vector<vector<int>> threeSum(vector<int> &nums)
     {
-
         vector<vector<int>> vec;
         set<vector<int>> uniqueTriplets;
         for (int i = 0; i < nums.size(); i++)
@@ -77,7 +75,6 @@ class Solution
 public:
     vector<vector<int>> threeSum(vector<int> &nums)
     {
-
         std::sort(nums.begin(), nums.end());
         std::vector<std::vector<int>> vec;
         std::set<std::vector<int>> s;
@@ -100,6 +97,7 @@ public:
                     k--;
             }
         }
+
         for (const auto &triplet : s)
             vec.push_back(triplet);
         return vec;
@@ -116,7 +114,6 @@ class Solution
 public:
     vector<vector<int>> threeSum(vector<int> &nums)
     {
-
         std::sort(nums.begin(), nums.end());
         std::vector<std::vector<int>> vec;
         for (int i = 0; i < nums.size(); i++)

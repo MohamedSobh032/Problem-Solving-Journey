@@ -8,7 +8,6 @@ class Solution
 public:
     int jump(vector<int> &nums)
     {
-
         if (nums.size() == 0 || nums.size() == 1)
             return 0;
 
@@ -42,7 +41,6 @@ public:
     int jump(vector<int> &nums)
     {
         int near = 0, far = 0, jumps = 0;
-
         while (far < nums.size() - 1)
         {
             int farthest = 0;

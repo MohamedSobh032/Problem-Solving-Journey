@@ -8,10 +8,10 @@ class Solution
 public:
     string convert(string s, int numRows)
     {
-
         // Algorithm can't handle 1 row
         if (numRows == 1)
             return s;
+
         // Algorithm
         vector<vector<char>> zigzag(numRows);
         int counter = 0;
@@ -38,6 +38,7 @@ public:
                 }
             }
         }
+
         // Append new string
         string ret = "";
         for (const auto &row : zigzag)
@@ -60,7 +61,6 @@ class Solution
 public:
     string convert(string s, int numRows)
     {
-
         if (numRows == 1 || numRows >= s.length())
             return s;
 

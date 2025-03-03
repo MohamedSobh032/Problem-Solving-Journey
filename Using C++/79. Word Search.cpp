@@ -13,7 +13,6 @@ public:
 
     bool dfs(int index, int row, int column)
     {
-
         if (word.size() == index)
             return true;
         if (row < 0 || column < 0 || row >= rowsize || column >= colsize || word[index] != board[row][column])
@@ -29,7 +28,6 @@ public:
 
     bool exist(vector<vector<char>> &board, string word)
     {
-
         this->rowsize = board.size();
         this->colsize = board[0].size();
         this->board = board;

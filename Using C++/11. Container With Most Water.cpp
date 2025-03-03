@@ -8,7 +8,6 @@ class Solution
 public:
     int maxArea(vector<int> &height)
     {
-
         int max_area = 0;
         // iterate on all possible combinations
         for (int i = 0; i < height.size(); i++)
@@ -29,11 +28,9 @@ class Solution
 public:
     int maxArea(vector<int> &height)
     {
-
         int l = 0;
         int r = height.size() - 1;
         int max_area = 0;
-
         while (l < r)
         {
             max_area = std::max(max_area, (r - l) * std::min(height[r], height[l]));
@@ -42,7 +39,6 @@ public:
             else
                 l++;
         }
-
         return max_area;
     }
 };

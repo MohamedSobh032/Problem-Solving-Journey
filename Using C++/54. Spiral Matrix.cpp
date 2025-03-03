@@ -10,7 +10,6 @@ public:
     vector<int> spiralOrder(vector<vector<int>> &matrix)
     {
         std::vector<int> spiral;
-
         int m = matrix[0].size();
         int n = matrix.size();
 
@@ -21,7 +20,6 @@ public:
 
         while (left < right && top < bottom)
         {
-
             for (int i = left; i < right; i++)
                 spiral.push_back(matrix[top][i]);
             top++;

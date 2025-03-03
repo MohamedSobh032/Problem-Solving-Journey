@@ -9,7 +9,6 @@ class Solution
 public:
     bool isValid(string s)
     {
-
         std::stack<char> space;
         for (const char &c : s)
         {

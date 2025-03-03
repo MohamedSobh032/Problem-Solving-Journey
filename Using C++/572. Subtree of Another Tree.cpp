@@ -3,10 +3,11 @@
  * -- m4 3aref complexity
  * -- For each subtree, compare the whole part
  */
-class Solution {
+class Solution
+{
 public:
-    
-    bool compareTree(TreeNode* sub1, TreeNode* sub2) {
+    bool compareTree(TreeNode *sub1, TreeNode *sub2)
+    {
         if (!sub1 && !sub2)
             return true;
         if (sub1 && sub2 && sub1->val == sub2->val)
@@ -14,7 +15,8 @@ public:
         return false;
     }
 
-    bool isSubtree(TreeNode* root, TreeNode* subRoot) {
+    bool isSubtree(TreeNode *root, TreeNode *subRoot)
+    {
         if (!subRoot)
             return true;
         if (!root)

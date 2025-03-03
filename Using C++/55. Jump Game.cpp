@@ -8,7 +8,6 @@ class Solution
 public:
     bool canJump(vector<int> &nums)
     {
-
         std::vector<bool> dp(nums.size(), false);
         dp[nums.size() - 1] = true;
         for (int i = nums.size() - 2; i >= 0; i--)
@@ -38,13 +37,10 @@ class Solution
 public:
     bool canJump(vector<int> &nums)
     {
-
         int destination = nums.size() - 1;
         for (int i = nums.size() - 2; i >= 0; i--)
-        {
             if (i + nums[i] >= destination)
                 destination = i;
-        }
         return destination == 0;
     }
 };

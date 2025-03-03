@@ -1,24 +1,29 @@
-struct node {
-    node* nodes[26];
+struct node
+{
+    node *nodes[26];
     bool marks;
-    node(): marks(false) {
+    node() : marks(false)
+    {
         for (int i = 0; i < 26; i++)
             nodes[i] = nullptr;
     }
 };
 
-class Trie {
+class Trie
+{
 public:
-    node* root;
-    Trie() {
+    node *root;
+    Trie()
+    {
         root = new node();
     }
-    
-    void insert(string word) {
-        
+
+    void insert(string word)
+    {
         int n = static_cast<int>(word.size());
-        node* iterator = root;
-        for (int i = 0; i < n; i++) {
+        node *iterator = root;
+        for (int i = 0; i < n; i++)
+        {
             int index = static_cast<int>(word[i]) - 97;
             if (iterator->nodes[index] == nullptr)
                 iterator->nodes[index] = new node();
@@ -26,12 +31,13 @@ public:
         }
         iterator->marks = true;
     }
-    
-    bool search(string word) {
-        
+
+    bool search(string word)
+    {
         int n = static_cast<int>(word.size());
-        node* iterator = root;
-        for (int i = 0; i < n; i++) {
+        node *iterator = root;
+        for (int i = 0; i < n; i++)
+        {
             int index = static_cast<int>(word[i]) - 97;
             if (iterator->nodes[index] == nullptr)
                 return false;
@@ -39,12 +45,13 @@ public:
         }
         return iterator->marks;
     }
-    
-    bool startsWith(string prefix) {
-        
+
+    bool startsWith(string prefix)
+    {
         int n = static_cast<int>(prefix.size());
-        node* iterator = root;
-        for (int i = 0; i < n; i++) {
+        node *iterator = root;
+        for (int i = 0; i < n; i++)
+        {
             int index = static_cast<int>(prefix[i]) - 97;
             if (iterator->nodes[index] == nullptr)
                 return false;

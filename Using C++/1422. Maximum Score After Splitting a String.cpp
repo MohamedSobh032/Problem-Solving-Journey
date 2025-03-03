@@ -4,12 +4,16 @@
  * -- Space Complexity: O(1)
  * -- Brute-force approach, tries all possible splits and calculates the score
  */
-class Solution {
+class Solution
+{
 public:
-    int maxScore(string s) {
+    int maxScore(string s)
+    {
         int max_score = INT_MIN;
-        for (int i = 1; i < s.size(); i++) {
-            int left_zeros = 0; int right_ones = 0;
+        for (int i = 1; i < s.size(); i++)
+        {
+            int left_zeros = 0;
+            int right_ones = 0;
             for (int j = 0; j < i; j++)
                 left_zeros += (s[j] == '0');
             for (int j = s.size() - 1; j >= i; j--)
@@ -26,15 +30,17 @@ public:
  * -- Space Complexity: O(n)
  * -- Optimized approach, uses two arrays to store the number of zeros and ones to the left and right of each index
  */
-class Solution {
+class Solution
+{
 public:
-    int maxScore(string s) {
-
-        int N = s.size(); int max_score = INT_MIN;
+    int maxScore(string s)
+    {
+        int N = s.size();
+        int max_score = INT_MIN;
         std::vector<int> zeros(N - 1, 0);
         std::vector<int> ones(N - 1, 0);
-        
-        zeros[0] = (s[0] == '0'); 
+
+        zeros[0] = (s[0] == '0');
         for (int i = 1; i < N - 1; i++)
             zeros[i] = zeros[i - 1] + (s[i] == '0');
 
@@ -54,14 +60,20 @@ public:
  * -- Space Complexity: O(1)
  * -- Further optimized approach, uses two variables to store the current number of zeros and ones
  */
-class Solution {
+class Solution
+{
 public:
-    int maxScore(string s) {
-
-        int ones = 0; int zeros = 0; int best = INT_MIN;
-        for (int i = 0; i < s.size() - 1; i++) {
-            if (s[i] == '1') ones++;
-            else zeros++;
+    int maxScore(string s)
+    {
+        int ones = 0;
+        int zeros = 0;
+        int best = INT_MIN;
+        for (int i = 0; i < s.size() - 1; i++)
+        {
+            if (s[i] == '1')
+                ones++;
+            else
+                zeros++;
             best = std::max(best, zeros - ones);
         }
         ones += (s.back() == '1');

@@ -4,15 +4,19 @@
  * -- Space Complexity: O(1)
  * -- Iterative two-pointers approach
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* reverseList(ListNode* head) {
-    
-        if (!head) return nullptr;
-        ListNode* tail = nullptr;
-        ListNode* lead = head;
-        while (lead) {
-            ListNode* temp = lead->next;
+    ListNode *reverseList(ListNode *head)
+    {
+        if (!head)
+            return nullptr;
+            
+        ListNode *tail = nullptr;
+        ListNode *lead = head;
+        while (lead)
+        {
+            ListNode *temp = lead->next;
             lead->next = tail;
             tail = lead;
             lead = temp;
@@ -27,13 +31,17 @@ public:
  * -- Space Complexity: O(1)
  * -- Recursive approach
  */
-class Solution {
+class Solution
+{
 public:
-    ListNode* reverseList(ListNode* head) {
-    
-        if (!head) return nullptr;
-        ListNode* cur = head;
-        if (head->next) {
+    ListNode *reverseList(ListNode *head)
+    {
+        if (!head)
+            return nullptr;
+
+        ListNode *cur = head;
+        if (head->next)
+        {
             cur = reverseList(head->next);
             head->next->next = head;
         }

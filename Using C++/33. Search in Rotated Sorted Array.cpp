@@ -8,7 +8,6 @@ class Solution
 public:
     int search(vector<int> &nums, int target)
     {
-
         if (nums.size() == 1)
         {
             if (nums[0] == target)

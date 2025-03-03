@@ -16,6 +16,7 @@ public:
         }
         else if (total > n)
             return;
+
         counter(solutions, total + 1, n);
         counter(solutions, total + 2, n);
     }
@@ -41,6 +42,7 @@ public:
         // Base case
         if (n == 0 || n == 1)
             return 1;
+
         // DP vector with initialization = 1 (base case)
         std::vector<int> dp(n + 1, 1);
         for (int i = 2; i <= n; i++)

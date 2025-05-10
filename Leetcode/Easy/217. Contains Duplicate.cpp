@@ -23,7 +23,7 @@ public:
 
     /**
      * @details Converts the vector into a set. If duplicates exist, set size will be smaller.
-     * @complexity: Time: O(n log n), Space: O(n)
+     * @complexity: Time: O(n log(n)), Space: O(n)
      */
     bool containsDuplicate(vector<int> &nums)
     {

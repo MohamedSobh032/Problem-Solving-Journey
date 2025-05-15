@@ -8,6 +8,7 @@ class Solution
 {
 public:
     /**
+     * @brief Brute-Force
      * @details Compares every pair of elements in the array
      * @complexity: Time: O(n^2), Space: O(1)
      */
@@ -22,6 +23,7 @@ public:
     }
 
     /**
+     * @brief Set Conversion
      * @details Converts the vector into a set. If duplicates exist, set size will be smaller.
      * @complexity: Time: O(n log(n)), Space: O(n)
      */
@@ -32,6 +34,7 @@ public:
     }
 
     /**
+     * @brief Hashing
      * @details Uses a hashmap for tracking seen values, if a value exists in the map, then there is duplicate
      * @complexity: Time: O(n), Space: O(n)
      */
@@ -49,6 +52,7 @@ public:
     }
 
     /**
+     * @brief Sorting
      * @details Sorts the array and checks adjacent elements for equality.
      * @complexity: Time: O(n log(n)), Space: O(1)
      */

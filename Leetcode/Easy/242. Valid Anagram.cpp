@@ -6,7 +6,8 @@ class Solution
 {
 public:
     /**
-     * @details sort both strings then compare them
+     * @brief Sorting
+     * @details Sort both strings then compare them
      * @complexity: Time: O(n log(n)), Space: O(1)
      */
     bool isAnagram(string s, string t)
@@ -21,6 +22,7 @@ public:
     }
 
     /**
+     * @brief Frequency Array
      * @details Compares the frequencies of characters in both arrays by subtraction
      * @complexity: Time: O(n), Space: O(1)
      */

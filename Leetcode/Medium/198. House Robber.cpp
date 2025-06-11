@@ -4,6 +4,12 @@ using namespace std;
 class Solution
 {
 public:
+    /**
+     * @brief Bottom-up DP
+     * @details Solves the house robber problem by tracking max money at each step
+     *          without robbing two adjacent houses.
+     * @complexity: Time: O(n), Space: O(1)
+     */
     int rob(vector<int> &nums)
     {
         int n = nums.size();
